@@ -1,0 +1,7 @@
+rule process:
+    input:
+        'data/raw/study_A/conversation_u00.csv'
+    output:
+        'data/interim/study_A/hourly_conversation_u00.csv'
+    script:
+        "scripts/preprocess.py"
