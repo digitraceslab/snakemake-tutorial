@@ -5,3 +5,9 @@ rule process:
         'data/interim/study_A/hourly_conversation_u00.csv'
     script:
         "scripts/preprocess.py"
+
+rule clean:
+    input:
+    output:
+    shell:
+        "rm -rf data/interim/"
