@@ -1,0 +1,36 @@
+Building DAG of jobs...
+Using shell: /appl/scibuilder-mamba/aalto-rhel9/prod/software/scicomp-python-env/2024-01/f56a564/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job        count
+-------  -------
+all            1
+process        1
+total          2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sun Mar  9 23:39:16 2025]
+localrule process:
+    input: data/raw/study_A/conversation_u00.csv, data/raw/study_A/conversation_u01.csv
+    output: data/interim/study_A/call_duration.csv
+    jobid: 1
+    reason: Missing output files: data/interim/study_A/call_duration.csv
+    resources: tmpdir=/tmp
+
+RuleException:
+CalledProcessError in file /scratch/work/luongn1/snakemake-tutorial/workflow/Snakefile, line 17:
+Command 'set -euo pipefail;  /appl/scibuilder-mamba/aalto-rhel9/prod/software/scicomp-python-env/2024-01/f56a564/bin/python /scratch/work/luongn1/snakemake-tutorial/.snakemake/scripts/tmp2e68xyrh.preprocess.py' returned non-zero exit status 1.
+[Sun Mar  9 23:39:18 2025]
+Error in rule process:
+    jobid: 1
+    input: data/raw/study_A/conversation_u00.csv, data/raw/study_A/conversation_u01.csv
+    output: data/interim/study_A/call_duration.csv
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-09T233916.575418.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

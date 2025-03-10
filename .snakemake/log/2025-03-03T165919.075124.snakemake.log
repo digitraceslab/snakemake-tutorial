@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule process in file /scratch/work/luongn1/snakemake-tutorial/workflow/Snakefile, line 7:
+Missing input files for rule process:
+    output: data/interim/study_A/call_duration.csv
+    affected files:
+        data/raw/study_A/conversation_u_01.csv
+        data/raw/study_A/conversation_u_00.csv

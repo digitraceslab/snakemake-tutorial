@@ -1,0 +1,25 @@
+Building DAG of jobs...
+Using shell: /appl/scibuilder-mamba/aalto-rhel9/prod/software/scicomp-python-env/2024-01/f56a564/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job        count
+-------  -------
+process        1
+total          1
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Mar  3 17:03:24 2025]
+localrule process:
+    input: data/raw/study_A/conversation_u00.csv, data/raw/study_A/conversation_u01.csv
+    output: data/interim/study_A/call_duration.csv
+    jobid: 0
+    reason: Missing output files: data/interim/study_A/call_duration.csv
+    resources: tmpdir=/tmp
+
+[Mon Mar  3 17:03:26 2025]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: .snakemake/log/2025-03-03T170324.355411.snakemake.log

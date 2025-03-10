@@ -1,0 +1,36 @@
+Building DAG of jobs...
+Using shell: /appl/scibuilder-mamba/aalto-rhel9/prod/software/scicomp-python-env/2024-01/f56a564/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job        count
+-------  -------
+process        1
+total          1
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sun Mar  2 15:20:27 2025]
+localrule process:
+    input: data/raw/study_A/conversation_u00.csv
+    output: data/interim/study_A/hourly_conversation_u00.csv
+    jobid: 0
+    reason: Missing output files: data/interim/study_A/hourly_conversation_u00.csv
+    resources: tmpdir=/tmp
+
+RuleException:
+WorkflowError in file /scratch/work/luongn1/snakemake-tutorial/workflow/Snakefile, line 7:
+Failed to open source file /scratch/work/luongn1/snakemake-tutorial/workflow/../scripts/process.py
+FileNotFoundError: [Errno 2] No such file or directory: '/scratch/work/luongn1/snakemake-tutorial/workflow/../scripts/process.py'
+[Sun Mar  2 15:20:27 2025]
+Error in rule process:
+    jobid: 0
+    input: data/raw/study_A/conversation_u00.csv
+    output: data/interim/study_A/hourly_conversation_u00.csv
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-02T152027.860472.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

@@ -1,0 +1,26 @@
+Building DAG of jobs...
+Using shell: /appl/scibuilder-mamba/aalto-rhel9/prod/software/scicomp-python-env/2024-01/f56a564/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job         count
+--------  -------
+all             1
+resample        1
+total           2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sun Mar  9 23:44:54 2025]
+localrule resample:
+    input: data/interim/study_A/call_duration.csv
+    output: data/interim/study_A/call_hourly.csv
+    jobid: 1
+    reason: Missing output files: data/interim/study_A/call_hourly.csv
+    resources: tmpdir=/tmp
+
+Waiting at most 5 seconds for missing files.
+WorkflowError in rule resample in file /scratch/work/luongn1/snakemake-tutorial/workflow/Snakefile, line 19:
+OSError: Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+data/interim/study_A/call_duration.csv (missing locally, parent dir not present)

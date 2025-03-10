@@ -1,0 +1,56 @@
+Building DAG of jobs...
+Using shell: /appl/scibuilder-mamba/aalto-rhel9/prod/software/scicomp-python-env/2024-01/f56a564/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job         count
+--------  -------
+all             1
+process         1
+resample        1
+total           3
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sun Mar  9 23:58:07 2025]
+localrule process:
+    input: data/raw/study_B/conversation_u00.csv, data/raw/study_B/conversation_u01.csv
+    output: data/interim/study_B/call_duration.csv
+    jobid: 4
+    reason: Missing output files: data/interim/study_B/call_duration.csv
+    wildcards: study=study_B
+    resources: tmpdir=/tmp
+
+[Sun Mar  9 23:58:09 2025]
+Finished job 4.
+1 of 3 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sun Mar  9 23:58:09 2025]
+localrule resample:
+    input: data/interim/study_B/call_duration.csv
+    output: data/interim/study_B/call_hourly.csv
+    jobid: 3
+    reason: Missing output files: data/interim/study_B/call_hourly.csv; Input files updated by another job: data/interim/study_B/call_duration.csv
+    wildcards: study=study_B
+    resources: tmpdir=/tmp
+
+[Sun Mar  9 23:58:10 2025]
+Finished job 3.
+2 of 3 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sun Mar  9 23:58:10 2025]
+localrule all:
+    input: data/interim/study_A/call_hourly.csv, data/interim/study_B/call_hourly.csv
+    jobid: 0
+    reason: Input files updated by another job: data/interim/study_B/call_hourly.csv
+    resources: tmpdir=/tmp
+
+[Sun Mar  9 23:58:10 2025]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: .snakemake/log/2025-03-09T235807.894481.snakemake.log
